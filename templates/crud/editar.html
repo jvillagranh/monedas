@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<form>
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombre" placeholder="Nombre de la Moneda" value="{{ moneda.nombre }}">
+  </div>
+  <div class="form-group">
+    <label for="abreviacion">Abreviacion</label>
+    <input type="text" class="form-control" id="abreviacion" placeholder="Abreviación de la Moneda" value="{{ moneda.abreviacion }}">
+  </div>
+  <button type="submit" class="btn btn-primary">Aceptar</button>
+  <button type="submit" class="btn btn-danger">Cancelar</button>
+</form>
+
+{% endblock %}
