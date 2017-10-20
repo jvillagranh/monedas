@@ -2,29 +2,20 @@
 
 {% block contenido %}
 
-<!-- <form> -->
+<h1>¿Está seguro de eliminar?</h1>
 <form method = "post">
   {% csrf_token %}
-  <!-- Comentario -->
   <p>
   <div class="form-group">
-    <!-- <label for="nombre">Nombre</label> #20/10/2017 -->
-    <!-- <input type="text" class="form-control" id="nombre" placeholder="Nombre de la Moneda" value="{{ moneda.nombre }}"> #20/10/2017-->
     <label for="{{ formulario.nombre.id_for_label }}">{{ formulario.nombre.label }}</label>
     {{ formulario.nombre }}
   </div>
   <div class="form-group">
-    <!-- <label for="abreviacion">Abreviacion</label> #20/10/2017 -->
-    <!-- <input type="text" class="form-control" id="abreviacion" placeholder="Abreviación de la Moneda" value="{{ moneda.abreviacion }}"> #20/10/2017 -->
     <label for="{{ formulario.abreviacion.id_for_label }}">{{ formulario.abreviacion.label }}</label>
     {{ formulario.abreviacion }}
-
   </div>
   <button type="submit" class="btn btn-primary">Aceptar</button>
   <a href="/crud/" class="btn btn-danger">Cancelar</a>
 </form>
-
-<!-- <h2>Formulario de Pruebas</h2>
-{{ formulario}} -->
 
 {% endblock %}

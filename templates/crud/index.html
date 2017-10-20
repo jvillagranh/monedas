@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-
+<p>
+<a href="{% url 'crudnuevo' %}" class="btn btn-primary">Nueva Moneda</a>
+<!-- <a href="#" class="btn btn-primary">Nueva Moneda</a> -->
   <table class="table">
     <thead class="thead-inverse">
       <tr>
@@ -15,9 +17,17 @@
       {% for moneda in monedas %}
         <tr>
           <th scope="row">{{ moneda.id }}</th>
-          <td>{{ moneda.nombre }}</td>
+          <!-- <td><a href="./editar/{{ moneda.id }}">{{ moneda.nombre }}</a></td> -->
+          <td>
+              <a href="{% url 'crudeditar' moneda.id %}">{{ moneda.nombre }}</a>
+          </td>
           <td>{{ moneda.abreviacion }}</td>
-          <td></td>
+          <td>
+            <a href="{% url 'crudeditar' moneda.id %}"
+                    class="btn btn-info btn-sm">Editar</a>
+            <a href="{% url 'crudeliminar' moneda.id %}"
+                    class="btn btn-danger btn-sm">Eliminar</a>
+          </td>
         </tr>
       {% endfor %}
     </tbody>
